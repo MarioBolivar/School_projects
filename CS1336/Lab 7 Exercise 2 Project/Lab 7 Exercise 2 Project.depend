@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1478580845 source:c:\users\mario bolivar\documents\codeblocks\lab 7 exercise 2 project\lab7_exercise2.cpp
+	<iostream>
+	<string>
+	<fstream>
+	<iomanip>
+
