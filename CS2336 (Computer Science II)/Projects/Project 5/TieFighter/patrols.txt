@@ -1,0 +1,11 @@
+Pilot Name      Valid Route    Route Length
+T'Challa        true                    19
+
+Steve Rogers    true                    36
+
+Scott Lang      true                    58
+
+Clint Barton    false                  N/A
+
+Natasha Romanov false                  N/A
+
