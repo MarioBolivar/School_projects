@@ -1,0 +1,16 @@
+# depslib dependency file v1.0
+1479156676 source:e:\project\main.cpp
+	<iostream>
+	<ctime>
+	<cstdlib>
+
+1479155796 source:d:\project\main.cpp
+	<iostream>
+	<ctime>
+	<cstdlib>
+
+1479164262 source:f:\project\main.cpp
+	<iostream>
+	<ctime>
+	<cstdlib>
+
