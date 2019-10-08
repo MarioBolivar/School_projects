@@ -3,9 +3,9 @@
 #	Lab 1
 
 		.text
-main:	andi $s0, $s0, 0			# Clear $s0
+main:		andi $s0, $s0, 0			# Clear $s0
 		lui $s0, 0x1001			
-		ori $s0, $s0, 0x000C		# Address of first element in array -- array[0]
+		ori $s0, $s0, 0x000C			# Address of first element in array -- array[0]
 		lw $s1, size				# Size of array
 		lw $s2, target				# Target number
 		andi $t0, $t0, 0			# Clear $t0 (L) -- initial
@@ -14,12 +14,12 @@ main:	andi $s0, $s0, 0			# Clear $s0
 		lui $s7, 0x1001				# Upper 16 bits
 		ori $s7, 0x0008				# Lower 16 bits
 
-bounds:	slt $t2, $t0, $t1			# L < R
+bounds:		slt $t2, $t0, $t1			# L < R
 		beq $t2, 1, loop			# Go to loop
 		beq $t0, $t1, loop			# L <= R, go to loop
 		j end						# Else, end
 
-loop:	sub $t2, $t1, $t0			# (R - L)
+loop:		sub $t2, $t1, $t0			# (R - L)
 		srl $t2, $t2, 1				# (R - L) / 2
 		add $t2, $t2, $t0			# L + (R - L) / 2 -- mid index
 		andi $t4, $t4, 0			# Clear $t4
@@ -40,9 +40,9 @@ lt:		addi $t1, $t2, -1			# mid - 1 == new right (R)
 gt:		addi $t0, $t2, 1			# mid + 1 == new left (L)
 		j bounds
 
-end:	sw $s4, 0($s7)				# Store word in result address
+end:		sw $s4, 0($s7)				# Store word in result address
 		ori $2, $0, 10
-		syscall						# End program
+		syscall					# End program
 
 		.data
 size: 	.word 10	# 0x10010000
