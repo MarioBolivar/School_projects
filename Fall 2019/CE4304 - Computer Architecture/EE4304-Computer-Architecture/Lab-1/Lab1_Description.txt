@@ -1,0 +1,29 @@
+#	Mario Bolivar - Mjb160330, CE
+#	CE 4304.001 - Computer Architecture
+#	Lab 1 -- Code Description
+
+For this laboratory, I followed the pseudocode for binary search and translated it into mips assembly.
+By reviewing -- https://www.geeksforgeeks.org/binary-search/
+
+I used registers:
+  $s0-$s4, $s7: Saving data variables (Addresses, values, results, etc.)
+    $s0 -- Address of first element in array
+    $s1 -- Size of array
+    $s2 -- Target number
+    $s3 -- Effective array address (with offsets e.g. array[i])
+    $s4 -- array[mid] / Result
+  $t0-$t4: Temporary variables
+    $t0 -- Left index (L) for binary search
+    $t1 -- Right index (R) for binary search
+    $t2 -- Mid index for binary search
+    $t3 -- Flag variable for branch conditions
+    $t4 -- Clone of $t2 for logical purposes
+    
+I used labels:
+  main:   --  This is where all variables/addresses are loaded from memory into registers
+  bounds: --  This is where the two Left (L) and Right (R) indexes are bound checked for an exit condition
+  loop:   --  This is where the mid index is calculated, then the midpoint elements are loaded and checked if target. Then, we branch accordingly.
+  lt:     --  This is where if the target is less than the current midpoint element we update the new Right (R) / $t1
+  gt:     --  This is where if the target is greater than the current midpoint element we update the new Left (L) / $t0
+  end:    --  This is the closing point where we save our result to the correct address and exit the program.
+  
